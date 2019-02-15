@@ -7,7 +7,7 @@
 - [Curation Markets for value discovery of those NFTs](https://medium.com/@simondlr/tokens-2-0-curved-token-bonding-in-curation-markets-1764a2e0bee5)
     - Alternatively a TCR, given the market would be small in the beginning
 ## Use Case
-Coordinate communities around sustainable and local farming.
+>Coordinate communities around sustainable and local farming.
   - NFTs represent either an individual plant or a plot of land
   - Owner of the NFT (either an organization like a co-op or an individual) can sell shares in that NFT
   - Shares guarantee the owner the right to that percentage of the harvest
