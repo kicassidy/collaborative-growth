@@ -1,10 +1,10 @@
 # Collaborative Growth (co-op 2.0)
 >A better model for collaboration: effectively coordinate growth &amp; share in its value
 ## The Stack
-- NFT that represents a real-world asset
-    - Oracle to provide a reliable connection between the NFT and the physical asset
-- [RFT (Re-Fungible Token) to sell shares in the NFT](https://medium.com/@billyrennekamp/re-fungible-token-rft-297003592769)
-- [Curation Markets for value discovery of those NFTs](https://medium.com/@simondlr/tokens-2-0-curved-token-bonding-in-curation-markets-1764a2e0bee5)
+- [NFT](http://erc721.org/) that represents a real-world asset
+    - Oracle (like [ChainLink](https://chain.link/)) to provide a reliable connection between the NFT and the physical asset
+- [RFT (Re-Fungible Token)](https://medium.com/@billyrennekamp/re-fungible-token-rft-297003592769) to sell shares in the NFT
+- [Curation Markets](https://medium.com/@simondlr/tokens-2-0-curved-token-bonding-in-curation-markets-1764a2e0bee5) for value discovery of those NFTs
     - Alternatively a TCR, given the market would be small in the beginning
 ## Use Case
 >Coordinate communities around sustainable and local farming.
