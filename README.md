@@ -8,7 +8,7 @@
     - Alternatively a TCR, given the market would be small in the beginning
 ## Use Case
 >Coordinate communities around sustainable and local farming.
-  - NFTs represent either an individual plant or a plot of land
+  - NFT represents either an [individual plant](https://www.baltimoresun.com/news/bs-xpm-1996-04-26-1996117052-story.html) or a plot of land
   - Owner of the NFT (either an organization like a co-op or an individual) can sell shares in that NFT
   - Shares guarantee the owner the right to that percentage of the harvest
     - Shares can also come with responsibilities?
@@ -20,3 +20,7 @@ We need better models to join the resources of the community for the common good
 Co-ops today suffer from a lack of transparency, accountability, and discovery. Communities also lack for incentives to join their resources for the common good. With the rise of the food industry and its destruction of our environment, we now have both the tools and the reasons to change the way we operate to better suit our needs as a global society.
 ## ETHDenver 2019!
 Sound interesting? Hack with me at ETHDevner \\(^-^)/
+## Acknowledgements
+- [Billy Rennekamp](https://github.com/okwme) for creating RFTs
+- [Simon de la Rouviere](https://github.com/simondlr) for creating Curation Markets
+- [Balázs Némethi](https://twitter.com/nembal) for pointing out that [creating a unique identity for individual plants is not a new idea](https://www.baltimoresun.com/news/bs-xpm-1996-04-26-1996117052-story.html) ;)
