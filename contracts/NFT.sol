@@ -9,15 +9,4 @@ contract NFT is ERC721, ERC721Metadata {
       // solhint-disable-previous-line no-empty-blocks
   }
 
-  function tokenURI(uint256 _tokenId) public view returns (string) {
-    return Strings.strConcat(
-        baseTokenURI(),
-        Strings.uint2str(_tokenId)
-    );
-  }
-
-  function baseTokenURI() public view returns (string) {
-    return "https://metadata-url/"; // wherever the metadata is hosted
-  }
-
 }
