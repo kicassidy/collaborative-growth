@@ -1,0 +1,6 @@
+[submodule "lib/dappsys"]
+	path = lib/dappsys
+	url = git@github.com:dapphub/dappsys.git
+[submodule "lib/openzeppelin-solidity"]
+	path = lib/openzeppelin-solidity
+	url = git@github.com:OpenZeppelin/openzeppelin-solidity.git
