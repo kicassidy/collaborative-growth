@@ -29,7 +29,7 @@ Start your local blockchain:
 ganache-cli
 ```
 
-(Alternatively you can use the GUI version of ganache)
+(Alternatively you can use [the GUI version of ganache](https://truffleframework.com/ganache))
 
 Deploy the token contracts:
 ```
