@@ -1,0 +1,27 @@
+{
+  "name": "collaborative-growth",
+  "version": "1.0.0",
+  "description": "ETHDenver hackathon",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kicassidy/collaborative-growth.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kicassidy/collaborative-growth/issues"
+  },
+  "homepage": "https://github.com/kicassidy/collaborative-growth#readme",
+  "dependencies": {
+    "ganache-cli": "^6.3.0",
+    "truffle": "^5.0.4"
+  }
+}
