@@ -14,7 +14,7 @@ uses node version v10.15.0 (it's reccommended to use `nvm` for node version mana
 
 update smart contract libraries:
 ```
-git submodule update --recursive
+git submodule update --init --recursive
 ```
 
 add dependencies with npm:
