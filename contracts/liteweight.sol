@@ -23,8 +23,8 @@ contract liteweight {
         require(IDtaken[_IDnum] == false);
     
         numUnheldShares[_IDnum] = _numShares;
-        fundEndBLock[_IDnum] = _endBlock;
-        fundPayoutBLock[_IDnum] = _payoutBlock;
+        fundEndBlock[_IDnum] = _endBlock;
+        fundPayoutBlock[_IDnum] = _payoutBlock;
         ID2URL[_IDnum] = _URL;
         IDtaken[_IDnum] = true;
         ID2Owner[_IDnum] = msg.sender;
@@ -84,6 +84,7 @@ contract liteweight {
     //currently makes up dummy data but SHOULD call an oracle
     function getStatus(uint _IDnum) public view returns(uint8)
     {
+
           return uint8(uint256(blockhash(block.number)) & uint256(0x01));
     }
     
