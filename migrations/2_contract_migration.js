@@ -1,7 +1,5 @@
-var NonFungible = artifacts.require("./NFT.sol");
-var SpecialPurposeVehicle = artifacts.require("./SPV.sol");
+var liteweight = artifacts.require("liteweight");
 
 module.exports = function(deployer) {
-  deployer.deploy(NonFungible, "deed", "NFT");
-  deployer.deploy(SpecialPurposeVehicle, "OWN");
+  deployer.deploy(liteweight);
 };
