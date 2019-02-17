@@ -1,61 +1,75 @@
-# Collaborative Growth (co-op 2.0)
->A better model for collaboration: effectively coordinate growth &amp; share in its value
-## The Stack
-- [NFT](http://erc721.org/) that represents a real-world asset
-    - Oracle (like [ChainLink](https://chain.link/)) to provide a reliable connection between the NFT and the physical asset
-- [RFT (Re-Fungible Token)](https://medium.com/@billyrennekamp/re-fungible-token-rft-297003592769) to sell shares in the NFT
-- [Curation Markets](https://medium.com/@simondlr/tokens-2-0-curved-token-bonding-in-curation-markets-1764a2e0bee5) for value discovery of those NFTs
-    - Alternatively a TCR, given the market would be small in the beginning
+## The OpenSea Ship's Log
 
-## Set up
+A page listing recent auctions and bids on OpenSea, with the ability to buy items on sale right from the page.
 
-### Environment
-uses node version v10.15.0 (it's reccommended to use `nvm` for node version management)
+### Demo
 
-update smart contract libraries:
-```
-git submodule update --init --recursive
-```
+Check out a live version of this example [here](https://ships-log.herokuapp.com).
 
-add dependencies with npm:
-```
+![Ship's Log Screenshot](https://storage.googleapis.com/opensea-static/opensea-ships-log/screenshot.png "Ship's Log Screenshot")
+
+### Instructions
+
+Execute `nvm use`, if you have Node Version Manager, or install Node.js version 8.11 to make sure dependencies work.
+
+Then, to install dependencies:
+```bash
 npm install
 ```
 
-### Local development / testing
+To run the app on localhost:
 
-Start your local blockchain:
-```
-ganache-cli
-```
-
-(Alternatively you can use [the GUI version of ganache](https://truffleframework.com/ganache))
-
-Deploy the token contracts:
-```
-truffle migrate
+```bash
+npm start
 ```
 
-Start the front-end:
-```
-some steps
+To minify and create a production build:
+
+```bash
+npm run build
 ```
 
-## Use Case
->Coordinate communities around sustainable and local farming.
-  - NFT represents either an [individual plant](https://www.baltimoresun.com/news/bs-xpm-1996-04-26-1996117052-story.html) or a plot of land
-  - Owner of the NFT (either an organization like a co-op or an individual) can sell shares in that NFT
-  - Shares guarantee the owner the right to that percentage of the harvest
-    - Shares can also come with responsibilities?
-  - Curation Markets exist for the organizations or individuals who grow and harvest
-    - A rise in value in a curation market signals that market's associated NFTs should rise in value
-## Why?
-We need better models to join the resources of the community for the common good. By giving individuals the tools they need to add value into a resource they share ownership in - we can empower them to participate, collaborate, and earn value (harvest) from what they co-create (sew).
+### The Code
 
-Co-ops today suffer from a lack of transparency, accountability, and discovery. Communities also lack for incentives to join their resources for the common good. With the rise of the food industry and its destruction of our environment, we now have both the tools and the reasons to change the way we operate to better suit our needs as a global society.
-## ETHDenver 2019!
-Sound interesting? Hack with me at ETHDevner \\(^-^)/
-## Acknowledgements
-- [Billy Rennekamp](https://github.com/okwme) for creating RFTs
-- [Simon de la Rouviere](https://github.com/simondlr) for creating Curation Markets
-- [Balázs Némethi](https://twitter.com/nembal) for pointing out that [creating a unique identity for individual plants is not a new idea](https://www.baltimoresun.com/news/bs-xpm-1996-04-26-1996117052-story.html) ;)
+This dapp is very simple. Here's the logic for fetching assets with orders:
+
+```JavaScript
+async fetchData() {
+  const { orders, count } = await this.props.seaport.api.getOrders({
+    side: this.state.side
+    // Other possible query options, with more to come:
+    // 'asset_contract_address'
+    // 'maker'
+    // 'taker'
+    // 'owner'
+    // 'token_id'
+    // 'token_ids'
+    // 'sale_kind'
+  }, this.state.page)
+
+  this.setState({ orders, total: count })
+}
+```
+
+And here's the one-line call for buying an asset:
+```JavaScript
+await this.props.seaport.fulfillOrder({ order: this.props.order, accountAddress })
+```
+
+If you have any questions, drop us a note any time in [Discord](https://discord.gg/XjwWYgU) in the #developers channel!
+
+### Deploying to Heroku
+
+The create-react-app buildpack has issues finding dependencies during the build phase. To work around those, you can do `npm run eject` and deploy a node app, or you can deploy a pure, static site:
+
+```bash
+heroku create -b https://github.com/heroku/heroku-buildpack-static.git
+npm run build
+git push heroku master
+```
+
+### Directory structure
+
+`public` houses favicon and base index.html – there should be little reason to use this directory.
+
+`src` contains the app's js entry point and a simple CSS file
