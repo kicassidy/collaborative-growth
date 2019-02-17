@@ -19,11 +19,12 @@ contract liteweight {
     mapping(uint256 => uint256) public ID2RevenuePerShare;
     mapping(uint256 => uint256) public sharePrice;
     
-    function createCrowdFund(uint256 _IDnum, uint256 _sharePrice, uint256 _numShares, string memory _URL, uint256 _EndBlock, uint256 _payoutBlock) public returns(bool){
+    function createCrowdFund(uint256 _IDnum, uint256 _sharePrice, uint256 _numShares, string memory _URL, uint256 _endBlock, uint256 _payoutBlock) public returns(bool){
         require(IDtaken[_IDnum] == false);
     
         numUnheldShares[_IDnum] = _numShares;
-        
+        fundEndBlock[_IDnum] = _endBlock;
+        fundPayoutBlock[_IDnum] = _payoutBlock;
         ID2URL[_IDnum] = _URL;
         IDtaken[_IDnum] = true;
         ID2Owner[_IDnum] = msg.sender;
@@ -83,6 +84,7 @@ contract liteweight {
     //currently makes up dummy data but SHOULD call an oracle
     function getStatus(uint _IDnum) public view returns(uint8)
     {
+
           return uint8(uint256(blockhash(block.number)) & uint256(0x01));
     }
     
