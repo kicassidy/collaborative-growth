@@ -19,11 +19,12 @@ contract liteweight {
     mapping(uint256 => uint256) public ID2RevenuePerShare;
     mapping(uint256 => uint256) public sharePrice;
     
-    function createCrowdFund(uint256 _IDnum, uint256 _sharePrice, uint256 _numShares, string memory _URL, uint256 _EndBlock, uint256 _payoutBlock) public returns(bool){
+    function createCrowdFund(uint256 _IDnum, uint256 _sharePrice, uint256 _numShares, string memory _URL, uint256 _endBlock, uint256 _payoutBlock) public returns(bool){
         require(IDtaken[_IDnum] == false);
     
         numUnheldShares[_IDnum] = _numShares;
-        
+        fundEndBLock[_IDnum] = _endBlock;
+        fundPayoutBLock[_IDnum] = _payoutBlock;
         ID2URL[_IDnum] = _URL;
         IDtaken[_IDnum] = true;
         ID2Owner[_IDnum] = msg.sender;
