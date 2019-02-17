@@ -1,12 +1,10 @@
-## The OpenSea Ship's Log
+## Sustainable Farming Frontend 
 
-A page listing recent auctions and bids on OpenSea, with the ability to buy items on sale right from the page.
+A page listing NFTs, with the ability to buy shares of items on sale right from the page.
 
 ### Demo
 
-Check out a live version of this example [here](https://ships-log.herokuapp.com).
-
-![Ship's Log Screenshot](https://storage.googleapis.com/opensea-static/opensea-ships-log/screenshot.png "Ship's Log Screenshot")
+ 
 
 ### Instructions
 
@@ -56,7 +54,7 @@ And here's the one-line call for buying an asset:
 await this.props.seaport.fulfillOrder({ order: this.props.order, accountAddress })
 ```
 
-If you have any questions, drop us a note any time in [Discord](https://discord.gg/XjwWYgU) in the #developers channel!
+Opensea questions: [Discord](https://discord.gg/XjwWYgU) in the #developers channel!
 
 ### Deploying to Heroku
 
